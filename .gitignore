@@ -1,0 +1,24 @@
+cat > .gitignore << 'EOF'
+# --- Terraform ---
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+*.tfplan
+
+# Keep the provider lock file (DO commit this)
+#! .terraform.lock.hcl
+
+# --- Node / Backend / Frontend ---
+node_modules/
+.env
+.env.*
+npm-debug.log*
+yarn-error.log*
+
+# Build artifacts (OPTION: see note below)
+dist/
+build/
+EOF
