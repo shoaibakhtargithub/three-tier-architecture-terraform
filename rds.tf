@@ -1,6 +1,3 @@
-
-
-# DB Subnet Group (only private subnets)
 resource "aws_db_subnet_group" "db_subnet_group" {
   name       = "my-db-subnet-group"
   subnet_ids = [
@@ -13,7 +10,7 @@ resource "aws_db_subnet_group" "db_subnet_group" {
   }
 }
 
-# RDS Instance (MySQL)
+
 resource "aws_db_instance" "mydb" {
   identifier              = "mydb"
   allocated_storage       = 20
