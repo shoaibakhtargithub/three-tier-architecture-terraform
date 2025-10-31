@@ -3,12 +3,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# 1. Create S3 bucket
+# 1 Create S3 bucket
 resource "aws_s3_bucket" "frontend" {
   bucket = "my-frontend-bucket-12345"
 }
 
-# 2. Enable static website hosting
+# 2 Enable static website hosting
 resource "aws_s3_bucket_website_configuration" "frontend" {
   bucket = aws_s3_bucket.frontend.id
 
@@ -21,7 +21,6 @@ resource "aws_s3_bucket_website_configuration" "frontend" {
   }
 }
 
-# 3. Allow public read (⚠️ for testing only, prod should use CloudFront + OAC)
 resource "aws_s3_bucket_policy" "public_read" {
   bucket = aws_s3_bucket.frontend.id
 
@@ -38,7 +37,7 @@ resource "aws_s3_bucket_policy" "public_read" {
   })
 }
 
-# 4. Upload dist/ folder files
+# dist folder add
 resource "aws_s3_object" "frontend_files" {
   for_each = fileset("${path.module}/dist", "**/*") # or ./build if React CRA
 
