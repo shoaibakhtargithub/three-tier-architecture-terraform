@@ -7,6 +7,7 @@ It includes:
 -  Backend (Node.js + Express) hosted on EC2
 -  Database (MySQL) hosted on RDS
 -  Infrastructure provisioned using Terraform (IaC)
+![WhatsApp Image 2026-02-26 at 01 06 05](https://github.com/user-attachments/assets/c4e66466-47b2-4d3d-9741-9e8967f8e00a)
 
 ---
 
@@ -132,6 +133,7 @@ PORT=5000
 ✔ Secure VPC & Subnet Design  
 ✔ Frontend–Backend–Database Connectivity  
 ✔ Production-style Deployment Structure  
+
 
 ---
 
